@@ -1,0 +1,17 @@
+.content-margin{
+    margin: 60px 5px 60px 5px;
+    background-color:wheat; 
+}
+
+.filler{
+    width: 100%;
+    margin: 10px;
+    border: 1px solid lightgray;
+    border-radius: 8px;
+}
+
+.form-header{
+    border-radius: 8px 8px 0 0;
+    padding: 10px;
+    font-size: 20px;
+}
