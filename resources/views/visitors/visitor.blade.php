@@ -8,7 +8,7 @@
 
 <div class="row text-left form-padding">
     <div class="col-md-12">
-        <form action="{{ route('visitor.post') }}" method="post">
+        <form action="{{ route('visitor.post') }}" method="post" enctype="multipart/form-data" >
             <div class="form-group col-md-12 ">
                 <label for="name">Visitor Name:*</label>
                 <input type="text" class="form-control" name="name" value="{{old('name')}}">
@@ -36,6 +36,10 @@
             <div class="form-group col-md-12 ">
                 <label for="purpose">Purpose:*</label>
                 <input type="text" class="form-control" name="purpose" value="{{old('purpose')}}">
+            </div>            
+            <div class="form-group col-md-12 ">
+                <label for="image">image:*</label>
+                <input type="file" class="form-control" name="vimage" value="{{old('vimage')}}">
             </div>
             <div class="col-md-12"> 
                 <button class="btn btn-primary">submit</button>

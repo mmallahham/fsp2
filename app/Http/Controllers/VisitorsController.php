@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Input;
 use Illuminate\Http\Request;
-use App\VisitorModel;
+use App\Visitor;
 
 class VisitorsController extends Controller
 {
     
     public function listAllVisitors(){
-        $visitorsModel = new VisitorModel();
-        $visitors = $visitorsModel->getAllVisitors();
+        $visitors = Visitor::all();
         return view('visitors.visitors',['visitors' => $visitors]);
     }
 
@@ -20,7 +20,32 @@ class VisitorsController extends Controller
             'id-number' => ['required'],
             'purpose' => ['required'],
             'visitees' => ['required']
-        ]);        
+        ]);  
+        $vimage = '/images/no_image.png';
+        if(Input::hasFile($request->input('vimage'))) {
+            
+            $file = Input::file('vimage');
+            echo 'copied 1';
+            $file->move(public_path().'/images/',$file->getClientOriginalName());
+            echo 'copied 2';
+            $vimage = '/images/'.$file->getClientOriginalName();
+            echo 'copied 3';
+        }
+
+
+        $visitor = new Visitor([
+            'name' => $request->input('name'),
+            'type' => $request->input('id-type'),
+            'idNumber' => $request->input('id-number'),
+            'mobile' => $request->input('mobile'),
+            'email' => $request->input('Email'),
+            'visitees' => $request->input('visitees'),
+            'purpose' => $request->input('purpose'),
+            'vimage' => $vimage
+
+          //  'vimage' => DB::raw("/Users/mmallahham/Downloads/images.png")
+        ]);
+        $visitor->save();
         return "done";
     }
 }

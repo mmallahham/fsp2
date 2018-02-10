@@ -22,7 +22,7 @@ class Visitor extends Migration
             $table->string('mobile');
             $table->string('visitees');
             $table->string('purpose');
-            $table->string('idNumber');
+            $table->binary('vimage')->nullable();
             $table->timestamps();
         });
     }
