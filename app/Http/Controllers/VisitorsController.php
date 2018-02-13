@@ -42,8 +42,7 @@ class VisitorsController extends Controller
             'visitees' => $request->input('visitees'),
             'purpose' => $request->input('purpose'),
             'vimage' => $vimage
-
-          //  'vimage' => DB::raw("/Users/mmallahham/Downloads/images.png")
+            
         ]);
         $visitor->save();
         return "done";
