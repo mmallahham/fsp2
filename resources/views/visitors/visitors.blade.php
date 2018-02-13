@@ -4,11 +4,10 @@
 @section('content')  
 <div class="row content-margin">
 <div class="col-md-9">   
-                <input type="search" class="form-control " name="search" placeholder="Search">
-                </div>
-            <div class="col-md-2"> 
-                <button class="btn btn-primary">submit</button>
-
+        <input type="search" class="form-control " name="search" placeholder="Search">
+    </div>
+    <div class="col-md-2"> 
+        <button class="btn btn-primary">submit</button>
     </div>   
 </div>
     <div class="row content-margin">
@@ -23,6 +22,7 @@
                         <th>Mobile</th>
                         <th>Visitees</th>
                         <th>Purpose</th>
+                        <th>Image</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -35,7 +35,7 @@
                         <td>{{ $visitor['mobile'] }}</td>
                         <td>{{ $visitor['visitees'] }}</td>
                         <td>{{ $visitor['purpose'] }}</td>
-                        <td><img src="{{ $visitor['vimage'] }}" style="height:100px;padding:0;margin:0"></td>
+                        <td><img src="{{ $visitor['vimage'] }}" style="height:50px;padding:0;margin:0"></td>
 
                     </tr>
                     @endforeach

@@ -22,7 +22,9 @@ class Visitor extends Migration
             $table->string('mobile');
             $table->string('visitees');
             $table->string('purpose');
+            $table->boolean('indoor')->default(false);
             $table->binary('vimage')->nullable();
+            $table->binary('depTime')->nullable();
             $table->timestamps();
         });
     }
