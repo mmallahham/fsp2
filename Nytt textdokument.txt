@@ -1,0 +1,16 @@
+- employee/departments
+- visitors
+- visitors can log in
+- auto complete employe name
+- tag print
+- indoor visitors
+- easy login and logout 
+- email sender or sms reminder
+- visitor log
+- old log (period)
+- black list
+- log table
+- check out
+- visit type
+- notifications
+- dashboard

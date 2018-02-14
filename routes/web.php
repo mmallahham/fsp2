@@ -17,6 +17,12 @@ Route::get('/', function () {
     return view('main.welcome');
 });
 
+Route::get('/pdf', [
+    'uses' => 'VisitorsController@downloadPDF',
+    'as' => 'pdf'
+    ]
+);
+
 Route::post('/', function () {
     return "hello";
 });
@@ -25,11 +31,11 @@ Route::get('/about', function () {
     return view('main.about');
 })->name('main.about');
 
-Route::get('/visitors',function(){
+Route::get('/visitor',function(){
     return view('visitors.visitor');
 })->name('visitor');
 
-Route::group(['prefix'=>'/visitor'],function(){
+Route::group(['prefix'=>'/visitors'],function(){
 
     Route::get('', [
         'uses' => 'VisitorsController@listAllVisitors',

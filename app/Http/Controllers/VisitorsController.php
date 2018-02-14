@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Http\Request;
 use App\Visitor;
+use PDF;
 
 class VisitorsController extends Controller
 {
@@ -47,4 +48,12 @@ class VisitorsController extends Controller
         $visitor->save();
         return "done";
     }
+
+    public function downloadPDF(){
+        // $user = UserDetail::find($id);
+        $visitors = Visitor::all();
+        
+        $pdf = PDF::loadView('pdf.list', ['visitors' => $visitors]);
+        return $pdf->download('invoice.pdf');    
+   }
 }

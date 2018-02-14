@@ -17,7 +17,7 @@ class Visitor extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('email');
-            $table->string('idNumber')->unique();
+            $table->string('idNumber');
             $table->string('type');
             $table->string('mobile');
             $table->string('visitees');
