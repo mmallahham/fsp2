@@ -1,7 +1,7 @@
 
 @include('main.header')
 <div class="row col-md-12">
-    <img src="/images/bg.jpg" alt="visitors">
+    <img class="img1" src="/images/bg.jpg" alt="visitors">
 </div>
 <div class="row">
     <div class="col-md-12 text-center">
